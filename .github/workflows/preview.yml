@@ -1,0 +1,32 @@
+name: Preview deployment
+on:
+  workflow_dispatch:
+    inputs:
+      outcome:
+        description: Synthetic demo outcome
+        required: true
+        default: success
+        type: choice
+        options: [success, failure]
+permissions:
+  contents: read
+jobs:
+  preview:
+    name: Build and validate preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Build assets
+        run: |
+          echo 'Bundling Orbit UI components'
+          echo 'Generated assets: dashboard.css 12.4 kB; dashboard.js 38.2 kB'
+      - name: Validate preview
+        env:
+          DEMO_OUTCOME: ${{ inputs.outcome }}
+        run: |
+          echo 'Checking preview health endpoint'
+          if [ "$DEMO_OUTCOME" = failure ]; then
+            echo '::error title=Intentional demo failure::Preview health check returned 503; deployment was not published.'
+            exit 1
+          fi
+          echo 'Preview health check passed. Synthetic deployment complete.'
