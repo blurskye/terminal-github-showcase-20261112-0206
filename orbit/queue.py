@@ -10,7 +10,8 @@ class Task:
 
 def retry_delay(attempt: int) -> int:
     """Return a bounded exponential retry delay in seconds."""
-    return min(2 ** max(0, attempt), 60)
+    bounded_attempt = min(max(0, attempt), 6)
+    return min(1 << bounded_attempt, 60)
 
 
 def summarize(tasks: list[Task]) -> dict[str, int]:
