@@ -113,23 +113,22 @@
   },
   "showAuthorIcons": true,
   "smartFilteringAtLaunch": false,
-  "repoPaths": {},
   "pager": {
-    "diff": "diffnav"
+    "diff": "diffnav --unified"
   },
   "keybindings": {
     "prs": [
       {
         "key": "T",
         "name": "ENHANCE checks",
-        "command": "gh enhance -R {{.RepoName}} {{.PrNumber}}"
+        "command": "ENHANCE_THEME=dracula gh enhance -R {{.RepoName}} {{.PrNumber}}"
       }
     ],
     "universal": [
       {
         "key": "ctrl+e",
         "name": "ENHANCE runs",
-        "command": "gh enhance -R blurskye/terminal-github-showcase-20261112-0206"
+        "command": "ENHANCE_THEME=dracula gh enhance -R blurskye/terminal-github-showcase-20261112-0206"
       }
     ]
   }
