@@ -1,0 +1,136 @@
+{
+  "prSections": [
+    {
+      "title": "Open PRs",
+      "filters": "repo:blurskye/terminal-github-showcase-20261112-0206 is:open sort:updated-desc"
+    },
+    {
+      "title": "Ready",
+      "filters": "repo:blurskye/terminal-github-showcase-20261112-0206 is:open draft:false -label:bug"
+    },
+    {
+      "title": "Drafts",
+      "filters": "repo:blurskye/terminal-github-showcase-20261112-0206 is:open draft:true"
+    }
+  ],
+  "issuesSections": [
+    {
+      "title": "Backlog",
+      "filters": "repo:blurskye/terminal-github-showcase-20261112-0206 is:open sort:created-asc"
+    },
+    {
+      "title": "Bugs",
+      "filters": "repo:blurskye/terminal-github-showcase-20261112-0206 is:open label:bug"
+    },
+    {
+      "title": "Design",
+      "filters": "repo:blurskye/terminal-github-showcase-20261112-0206 is:open label:design"
+    }
+  ],
+  "defaults": {
+    "view": "prs",
+    "preview": {
+      "open": true,
+      "width": 0.52,
+      "position": "right"
+    },
+    "prsLimit": 20,
+    "issuesLimit": 20,
+    "refetchIntervalMinutes": 0,
+    "layout": {
+      "prs": {
+        "repo": {
+          "hidden": true
+        },
+        "repoName": {
+          "hidden": true
+        },
+        "author": {
+          "hidden": true
+        },
+        "base": {
+          "hidden": true
+        },
+        "createdAt": {
+          "hidden": true
+        },
+        "updatedAt": {
+          "width": 5
+        },
+        "title": {
+          "grow": true,
+          "width": 45
+        }
+      },
+      "issues": {
+        "repo": {
+          "hidden": true
+        },
+        "repoName": {
+          "hidden": true
+        },
+        "author": {
+          "hidden": true
+        },
+        "createdAt": {
+          "hidden": true
+        },
+        "updatedAt": {
+          "width": 5
+        },
+        "title": {
+          "grow": true,
+          "width": 45
+        }
+      }
+    }
+  },
+  "theme": {
+    "ui": {
+      "sectionsShowCount": true,
+      "table": {
+        "compact": true
+      }
+    },
+    "colors": {
+      "text": {
+        "primary": "#c0caf5",
+        "secondary": "#7aa2f7",
+        "inverted": "#1a1b26",
+        "faint": "#9aa5ce",
+        "warning": "#e0af68",
+        "success": "#9ece6a"
+      },
+      "background": {
+        "selected": "#292e42"
+      },
+      "border": {
+        "primary": "#565f89",
+        "secondary": "#7aa2f7",
+        "faint": "#3b4261"
+      }
+    }
+  },
+  "showAuthorIcons": true,
+  "smartFilteringAtLaunch": false,
+  "repoPaths": {},
+  "pager": {
+    "diff": "diffnav"
+  },
+  "keybindings": {
+    "prs": [
+      {
+        "key": "T",
+        "name": "ENHANCE checks",
+        "command": "gh enhance -R {{.RepoName}} {{.PrNumber}}"
+      }
+    ],
+    "universal": [
+      {
+        "key": "ctrl+e",
+        "name": "ENHANCE runs",
+        "command": "gh enhance -R blurskye/terminal-github-showcase-20261112-0206"
+      }
+    ]
+  }
+}
